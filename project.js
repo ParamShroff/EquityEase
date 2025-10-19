@@ -1,9 +1,23 @@
-// Toggle forms
+// DOM elements
+const overlay = document.getElementById('overlay');
+const navbar = document.getElementById('navbar');
+const sidebar = document.getElementById('sidebar');
+const mainContent = document.getElementById('mainContent');
+const profileName = document.getElementById('profileName');
+
 const loginBtn = document.getElementById('loginBtn');
 const signupBtn = document.getElementById('signupBtn');
 const loginForm = document.getElementById('loginForm');
 const signupForm = document.getElementById('signupForm');
+const loginMessage = document.getElementById('loginMessage');
+const signupMessage = document.getElementById('signupMessage');
 
+// Initially hide app interface
+navbar.style.display = 'none';
+sidebar.style.display = 'none';
+mainContent.style.display = 'none';
+
+// Toggle forms
 loginBtn.addEventListener('click', () => {
   loginForm.classList.add('active');
   signupForm.classList.remove('active');
@@ -25,7 +39,6 @@ function validatePassword(password) {
 }
 
 // Signup form submit
-const signupMessage = document.getElementById('signupMessage');
 signupForm.addEventListener('submit', function(e) {
   e.preventDefault();
   const username = document.getElementById('signupUsername').value.trim();
@@ -44,13 +57,15 @@ signupForm.addEventListener('submit', function(e) {
     return;
   }
 
-  signupMessage.textContent = `Signup successful! Welcome, ${username}`;
-  signupMessage.style.color = "lime";
-  signupForm.reset();
+  // Success: Show main app
+  overlay.style.display = 'none';
+  navbar.style.display = 'flex';
+  sidebar.style.display = 'flex';
+  mainContent.style.display = 'block';
+  profileName.textContent = username;
 });
 
 // Login form submit
-const loginMessage = document.getElementById('loginMessage');
 loginForm.addEventListener('submit', function(e) {
   e.preventDefault();
   const username = document.getElementById('loginUsername').value.trim();
@@ -62,7 +77,10 @@ loginForm.addEventListener('submit', function(e) {
     return;
   }
 
-  loginMessage.textContent = `Login successful! Welcome back, ${username}`;
-  loginMessage.style.color = "lime";
-  loginForm.reset();
+  // Success: Show main app
+  overlay.style.display = 'none';
+  navbar.style.display = 'flex';
+  sidebar.style.display = 'flex';
+  mainContent.style.display = 'block';
+  profileName.textContent = username;
 });
