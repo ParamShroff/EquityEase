@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StockSim Login & Signup</title>
+  <title>StockSim Dashboard</title>
   <link rel="stylesheet" href="style.css">
   <link href="project.css" rel="stylesheet">
 </head>
 <body>
-  <div class="app-container">
-    <div class="brand">
-      <h1>Equity Ease</h1>
-      <p>Equity Ease makes it EASY</p>
-    </div>
-
+  <!-- Overlay Login/Signup -->
+  <div class="overlay" id="overlay">
     <div class="form-card">
       <div class="form-toggle">
         <button id="loginBtn" class="active">Login</button>
@@ -40,6 +36,37 @@
       </form>
     </div>
   </div>
+
+  <!-- Main App -->
+  <header class="navbar" id="navbar">
+    <div class="logo">Equity Ease</div>
+    <div class="nav-search">
+      <input type="text" placeholder="Search stocks...">
+    </div>
+    <div class="profile">
+      <span id="profileName"></span>
+      <img src="https://i.pravatar.cc/40" alt="profile">
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar">
+    <ul>
+      <li class="active">Dashboard</li>
+      <li>Portfolio</li>
+      <li>Orders</li>
+      <li>Watchlist</li>
+      <li>Market News</li>
+      <li>Settings</li>
+    </ul>
+  </aside>
+
+  <main class="main-content" id="mainContent">
+    <div class="cards-container">
+      <div class="card">Adani Ports: 150.23 <span class="up">▲2.5%</span></div>
+      <div class="card">Kotak Mahindra Bank: 2800.12 <span class="down">▼1.2%</span></div>
+      <div class="card">SBI: 780.50 <span class="up">▲3.1%</span></div>
+    </div>
+  </main>
 
   <script src="project.js"></script>
 </body>
