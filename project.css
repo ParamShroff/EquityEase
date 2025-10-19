@@ -1,0 +1,116 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.app-container {
+  text-align: center;
+}
+
+.brand h1 {
+  font-size: 3rem;
+  color: #00ffea;
+  margin-bottom: 5px;
+}
+
+.brand p {
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin-bottom: 30px;
+}
+
+/* Form Card */
+.form-card {
+  background-color: rgba(0,0,0,0.75);
+  border-radius: 12px;
+  padding: 40px;
+  width: 350px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* Toggle Buttons */
+.form-toggle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.form-toggle button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-weight: 500;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-toggle button.active {
+  color: #00ffea;
+  border-bottom: 2px solid #00ffea;
+}
+
+/* Forms */
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.form.active {
+  display: flex;
+}
+
+.form h2 {
+  margin-bottom: 20px;
+  color: #00ffea;
+}
+
+.form input {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.form input::placeholder {
+  color: #888;
+}
+
+.btn {
+  background-color: #00ffea;
+  color: #000;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #00d7c0;
+}
+
+small {
+  margin-top: 10px;
+  display: block;
+  font-size: 0.85rem;
+  min-height: 18px;
+  color: #f44336; /* Red by default */
+}
